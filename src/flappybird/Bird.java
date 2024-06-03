@@ -30,12 +30,12 @@ public class Bird {
         }
     }
     public void physics() {
-        x+=vx;
+        // x+=vx;
         y+=vy ;
         vy+=0.5f ;
     }
     public void update(Graphics g) {
-        g.setColor(Color.BLACK);
+        // g.setColor(Color.BLACK);
         g.drawImage(img, Math.round(x-RAD),Math.round(y-RAD),2*RAD,2*RAD, null);
     }
     public void jump() {

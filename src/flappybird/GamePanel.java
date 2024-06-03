@@ -55,7 +55,7 @@ public class GamePanel extends JPanel {
     // Vẻ background
     private void drawBackground(Graphics g, int backgroundX) {
         if (backgroundX <= -FlappyBird.WIDTH) {
-            backgroundX = 0;
+            backgroundX = 800;
         }
     
         try {
@@ -64,6 +64,7 @@ public class GamePanel extends JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    
         if (backgroundX > -FlappyBird.WIDTH && backgroundX < 0) {
             try {
                 Image background = ImageIO.read(new File("pic/bg.png"));
@@ -102,8 +103,8 @@ public class GamePanel extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         drawBackground(g, backgroundX);
-        backgroundX = (backgroundX - 1) % 800; 
-        backgroundX = (backgroundX - FlappyBird.WIDTH) % FlappyBird.WIDTH;
+        backgroundX = (backgroundX - 1) % FlappyBird.WIDTH; 
+        // backgroundX = (backgroundX - FlappyBird.WIDTH) % FlappyBird.WIDTH;
 
         
         
@@ -111,7 +112,7 @@ public class GamePanel extends JPanel {
         bird.update(g);
         for(Rectangle r : rects) {
             Graphics2D g2d = (Graphics2D) g;
-            g2d.setColor(Color.GREEN);
+            // g2d.setColor(Color.GREEN);
             // g2d.fillRect(r.x, r.y, r.width, r.height);
             AffineTransform old = g2d.getTransform();
             g2d.translate(r.x+PIPE_W/2, r.y+PIPE_H/2);

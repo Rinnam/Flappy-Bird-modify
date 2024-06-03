@@ -29,7 +29,7 @@ import javax.sound.sampled.*;
  */
 public class FlappyBird implements ActionListener, KeyListener {
     
-    public static final int FPS = 60, WIDTH = 800, HEIGHT =600;
+    public static final int FPS = 90, WIDTH = 800, HEIGHT =600;
     
     private Bird bird;
     private JFrame frame, frame1;
@@ -168,7 +168,6 @@ public class FlappyBird implements ActionListener, KeyListener {
             }
             ArrayList<Rectangle> toRemove = new ArrayList<Rectangle>();
             boolean game = true;
-            boolean check = true;
 
             for(Rectangle r : rects) {
                 r.x-=3;
